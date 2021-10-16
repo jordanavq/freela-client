@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const SignupCandidato = () => {
-    return;
+  return;
 };
 
 export default SignupCandidato;

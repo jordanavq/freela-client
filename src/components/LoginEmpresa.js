@@ -7,7 +7,7 @@ const INITIAL_FORM = {
   senha: "",
 };
 
-const LoginEmpresa = () => {
+const LoginEmpresa = (props) => {
   const [formValues, setFormValues] = useState({ ...INITIAL_FORM });
 
   const handleChange = ({ target: { name, value } }) => {
@@ -18,8 +18,9 @@ const LoginEmpresa = () => {
     e.preventDefault();
 
     try {
-        const result = await api.post('/empresa/entrar', formValues);
-        console.log(result);
+      const result = await api.post("/empresa/entrar", formValues);
+      localStorage.setItem("token", result.data.token);
+      props.history.push("/");
     } catch (error) {
       console.error(error);
     }
