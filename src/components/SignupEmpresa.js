@@ -21,8 +21,7 @@ const SignupEmpresa = () => {
     e.preventDefault();
     //fazer if (formValues.senha === formValues.confirmarSenha (para confirmar senha))
     try {
-      const result = await api.post("/empresa/cadastro", formValues);
-      console.log(result);
+      await api.post("/empresa/cadastro", formValues);
       history.push("/empresa/entrar");
     } catch (error) {
       console.error(error);
