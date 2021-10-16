@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router";
 import api from "../api/api.config";
 
 const INITIAL_FORM = {
   empresa: "",
   email: "",
   senha: "",
-  //confirmarSenha:"",
 };
 
-const SignupEmpresa = () => {
+const LoginEmpresa = () => {
   const [formValues, setFormValues] = useState({ ...INITIAL_FORM });
-  const history = useHistory();
 
   const handleChange = ({ target: { name, value } }) => {
     setFormValues({ ...formValues, [name]: value });
@@ -19,32 +16,24 @@ const SignupEmpresa = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //fazer if (formValues.senha === formValues.confirmarSenha (para confirmar senha))
+
     try {
-      await api.post("/empresa/cadastro", formValues);
-      history.push("/empresa/entrar");
+        const result = await api.post('/empresa/entrar', formValues);
+        console.log(result);
     } catch (error) {
       console.error(error);
     }
   };
+
   return (
     <div>
       <div>
-        <h2>Cadastro Empresa</h2>
+        <h2>Login Empresa</h2>
       </div>
       <form
         onSubmit={handleSubmit}
         className="d-flex vh-100 flex-column align-items-center justify-content-center"
       >
-        <label>Empresa:</label>
-        <input
-          className="form-control w-25"
-          type="text"
-          name="empresa"
-          value={formValues.empresa}
-          onChange={handleChange}
-        />
-
         <label>E-mail:</label>
         <input
           className="form-control w-25"
@@ -63,10 +52,10 @@ const SignupEmpresa = () => {
           onChange={handleChange}
         />
 
-        <button className="btn btn-primary mt-3">Cadastrar</button>
+        <button className="btn btn-primary mt-3">Entrar</button>
       </form>
     </div>
   );
 };
 
-export default SignupEmpresa;
+export default LoginEmpresa;
