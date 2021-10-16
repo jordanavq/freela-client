@@ -1,40 +1,73 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
+import { useHistory } from "react-router";
+import api from "../api/api.config";
 
 const INITIAL_FORM = {
-    empresa:"",
-    email:"",
-    senha:""
+  empresa: "",
+  email: "",
+  senha: "",
+  //confirmarSenha:"",
 };
 
 const SignupEmpresa = () => {
-    const [formValues, setFormValues] = useState({...INITIAL_FORM});
+  const [formValues, setFormValues] = useState({ ...INITIAL_FORM });
+  const history = useHistory();
 
-    const handleChange = ({target:{name,value}}) =>{
-        setFormValues({...formValues, [name]:value});
-    };
-    
-    return(
-        <div>
-            <div>
-            <h2>
-            Cadastro Empresa
-            </h2>
-            </div>
-            <form  className="d-flex vh-100 flex-column align-items-center justify-content-center" >
-                <label>Empresa:</label>
-                <input className='form-control w-25' type='text' name='empresa' value={formValues.empresa} onChange={handleChange} />
+  const handleChange = ({ target: { name, value } }) => {
+    setFormValues({ ...formValues, [name]: value });
+  };
 
-                <label>E-mail:</label>
-                <input className='form-control w-25' type='text' name='email' value={formValues.email} onChange={handleChange} />
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    //fazer if (formValues.senha === formValues.confirmarSenha (para confirmar senha))
+    try {
+      const result = await api.post("/empresa/cadastro", formValues);
+      console.log(result);
+      history.push("/empresa/entrar");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  return (
+    <div>
+      <div>
+        <h2>Cadastro Empresa</h2>
+      </div>
+      <form
+        onSubmit={handleSubmit}
+        className="d-flex vh-100 flex-column align-items-center justify-content-center"
+      >
+        <label>Empresa:</label>
+        <input
+          className="form-control w-25"
+          type="text"
+          name="empresa"
+          value={formValues.empresa}
+          onChange={handleChange}
+        />
 
-                <label>Senha:</label>
-                <input className='form-control w-25' type='password' name='senha' value={formValues.senha} onChange={handleChange} />
+        <label>E-mail:</label>
+        <input
+          className="form-control w-25"
+          type="text"
+          name="email"
+          value={formValues.email}
+          onChange={handleChange}
+        />
 
-                <button className='btn btn-primary mt-3'>Cadastrar</button>
-            </form>
+        <label>Senha:</label>
+        <input
+          className="form-control w-25"
+          type="password"
+          name="senha"
+          value={formValues.senha}
+          onChange={handleChange}
+        />
 
-        </div>
-    );
+        <button className="btn btn-primary mt-3">Cadastrar</button>
+      </form>
+    </div>
+  );
 };
 
 export default SignupEmpresa;
