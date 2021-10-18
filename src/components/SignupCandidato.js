@@ -5,12 +5,12 @@ import api from "../api/api.config";
 const INITIAL_FORM = {
   nome_e_sobrenome: "",
   funcao: "",
-  idade: "",
+  idade: 0,
   sexo: "",
   bairro_de_residencia: "",
   cidade: "",
   estado: "",
-  possui_meio_de_transporte_proprio: "",
+  possui_meio_de_transporte_proprio: false,
   celular: "",
   email: "",
   senha: "",
@@ -21,8 +21,9 @@ const SignupCandidato = () => {
   const [formValues, setFormValues] = useState({ ...INITIAL_FORM });
   const history = useHistory();
 
-  const handleChange = ({ target: { name, value } }) => {
-    setFormValues({ ...formValues, [name]: value });
+  const handleChange = ({ target  }) => {
+    const { name, value, checked, type } = target;
+    setFormValues({ ...formValues, [name]: type==="checkbox"? checked: value });
   };
 
   const handleSubmit = async (e) => {
@@ -65,7 +66,7 @@ const SignupCandidato = () => {
         <label>Idade:</label>
         <input
           className="form-control w-25"
-          type="text"
+          type="number"
           name="idade"
           value={formValues.idade}
           onChange={handleChange}
@@ -107,14 +108,19 @@ const SignupCandidato = () => {
           onChange={handleChange}
         />
 
-        <label>Possui meio de transporte próprio:</label>
-        <input
-          className="form-control w-25"
-          type="text"
-          name="possui_meio_de_transporte_proprio"
-          value={formValues.possui_meio_de_transporte_proprio}
-          onChange={handleChange}
-        />
+        <div className="form-check">
+        <label className="form-check-label">
+            Possui meio de transporte próprio:
+          </label>
+          <input
+            type="checkbox"
+            className="form-check-input"
+            onChange={handleChange}
+            name="possui_meio_de_transporte_proprio"
+            checked={formValues.possui_meio_de_transporte_proprio || false }
+          />
+         
+        </div>
 
         <label>Celular:</label>
         <input
