@@ -68,6 +68,7 @@ const SignupCandidato = () => {
           className="form-control w-25"
           type="number"
           name="idade"
+          min="0"
           value={formValues.idade}
           onChange={handleChange}
         />
