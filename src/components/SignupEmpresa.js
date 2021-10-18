@@ -28,13 +28,13 @@ const SignupEmpresa = () => {
     }
   };
   return (
-    <div>
+    <div className="d-flex vh-100 flex-column align-items-center justify-content-center">
       <div>
         <h2>Cadastro Empresa</h2>
       </div>
       <form
         onSubmit={handleSubmit}
-        className="d-flex vh-100 flex-column align-items-center justify-content-center"
+        className="w-100 d-flex flex-column align-items-center"
       >
         <label>Empresa:</label>
         <input

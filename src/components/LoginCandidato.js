@@ -26,13 +26,13 @@ const LoginCandidato = (props) => {
   };
 
   return (
-    <div>
+    <div className="d-flex vh-100 flex-column align-items-center justify-content-center">
       <div>
-        <h2>Login Candidato</h2>
+        <h2>Acesso Candidato</h2>
       </div>
       <form
         onSubmit={handleSubmit}
-        className="d-flex vh-100 flex-column align-items-center justify-content-center"
+        className="w-100 d-flex flex-column align-items-center"
       >
         <label>E-mail:</label>
         <input

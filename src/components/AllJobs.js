@@ -13,6 +13,7 @@ const AllJobs = () => {
             console.error(error.response)
         }
     }
+    useEffect(()=>{}, )
 
     return(
         <div>AllJobs</div>

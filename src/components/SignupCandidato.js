@@ -37,13 +37,13 @@ const SignupCandidato = () => {
     }
   };
   return (
-    <div>
+    <div className="d-flex vh-100 flex-column align-items-center justify-content-center">
       <div>
         <h2>Cadastro Candidato</h2>
       </div>
       <form
         onSubmit={handleSubmit}
-        className="d-flex vh-100 flex-column align-items-center justify-content-center"
+        className="w-100 d-flex flex-column align-items-center"
       >
         <label>Nome e Sobrenome:</label>
         <input
@@ -68,7 +68,7 @@ const SignupCandidato = () => {
           className="form-control w-25"
           type="number"
           name="idade"
-          min="0"
+          min="18"
           value={formValues.idade}
           onChange={handleChange}
         />
@@ -111,7 +111,7 @@ const SignupCandidato = () => {
 
         <div className="form-check">
         <label className="form-check-label">
-            Possui meio de transporte próprio:
+            Possui meio de transporte próprio
           </label>
           <input
             type="checkbox"
