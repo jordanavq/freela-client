@@ -17,7 +17,6 @@ const AllJobs = () => {
     getAllJobs();
   }, []);
 
-  // montar um card e puxá-lo no item para ser renderizado
   return (
   <div className="p-3"> 
       {jobs.map(item => (<div className="card" key={item._id}>
