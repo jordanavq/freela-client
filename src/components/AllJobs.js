@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import api from "../api/api.config";
 
 const AllJobs = () => {
@@ -29,9 +30,12 @@ const AllJobs = () => {
               <h5>Data: {item.data}</h5>
               <h5>Cidade: {item.cidade}</h5>
               <h5>Estado: {item.estado}</h5>
-              <button className="btn btn-light text-secondary">
+              <Link
+                to={`/vagas/${item._id}`}
+                className="btn btn-light text-secondary"
+              >
                 Mais informações
-              </button>
+              </Link>
             </div>
           </div>
         ))}
