@@ -21,7 +21,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/vagas" component={AllJobs} />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
