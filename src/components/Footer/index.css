@@ -1,0 +1,25 @@
+.fa-icon-container a {
+    text-decoration: none;
+  }
+  
+  .fa-icon-container a:hover {
+    color: black;
+  }
+  
+  .footer {
+    width: 100vw;
+    bottom: 0;
+    position: fixed;
+  }
+  
+  .name-container {
+    margin-left: 10px;
+  }
+  
+  .developed {
+    margin-right: 10px;
+  }
+  
+  .content {
+    overflow: hidden;
+  }
