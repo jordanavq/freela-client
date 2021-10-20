@@ -24,11 +24,14 @@ const AllJobs = () => {
         {jobs.map((item) => (
           <div className="card m-3" key={item._id}>
             <h4 className="card-header bg-primary text-light">{item.funcao}</h4>
-            <div className="card-body text-secondary">
+            <div className="card-body d-flex flex-column justify-content-between text-secondary">
               <h5>Empresa: {item.empresaId.empresa}</h5>
               <h5>Data: {item.data}</h5>
               <h5>Cidade: {item.cidade}</h5>
               <h5>Estado: {item.estado}</h5>
+              <button className="btn btn-light text-secondary">
+                Mais informações
+              </button>
             </div>
           </div>
         ))}
