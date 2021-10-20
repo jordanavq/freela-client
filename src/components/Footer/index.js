@@ -1,14 +1,11 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
-import "../Footer/index.css" ;
+import "../Footer/index.css";
 
 function Footer() {
   return (
     <div className="footer">
-      <footer
-        className="navbar  bg-dark navbar-static-bottom"
-        
-      >
+      <footer className="navbar  bg-dark navbar-static-bottom">
         <div className="footer-contacts ">
           <div className="name-container">
             <div className="fa-icon-container d-flex align-items-start">
@@ -52,35 +49,5 @@ function Footer() {
     </div>
   );
 }
-
-
-/*
-const Footer = () => {
-  return (
-    <footer className="footer text-center bg-dark text-light p-1" fixed="bottom">
-      <h5>
-        "Criado por
-        <a
-          class="text-light text-decoration-none"
-          href="https://github.com/jordanavq/"
-        >
-          {" "}
-          Jordana Queiroz{" "}
-        </a>{" "}
-        e
-        <a
-          class="text-light text-decoration-none"
-          href="https://github.com/DeAT1995/"
-        >
-          {" "}
-          Debora Tavares{" "}
-        </a>{" "}
-        como projeto fullstack para escola Ironhack."
-      </h5>
-    </footer>
-  );
-};
-*/
-
 
 export default Footer;
