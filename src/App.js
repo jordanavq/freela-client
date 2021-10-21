@@ -7,6 +7,7 @@ import LoginCandidato from "./components/LoginCandidato";
 import Home from "./components/Home";
 import AllJobs from "./components/AllJobs";
 import Job from "./components/Job";
+import Application from "./components/Application";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route exact path="/vagas" component={AllJobs} />
       <Route exact path="/vagas/:idVaga" component={Job} />
+      <Route exact path="/vagas/candidatura/:idVaga" component={Application} />
     </div>
   );
 }

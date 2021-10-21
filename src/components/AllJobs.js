@@ -34,7 +34,7 @@ const AllJobs = () => {
                 to={`/vagas/${item._id}`}
                 className="btn btn-light text-secondary"
               >
-                Mais informações
+                Mais Informações
               </Link>
             </div>
           </div>
