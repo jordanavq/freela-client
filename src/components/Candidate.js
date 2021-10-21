@@ -5,43 +5,42 @@ import { useEffect } from "react";
 import api from "../api/api.config";
 
 const Candidate = () => {
-  const { idVaga } = useParams();
-  const [job, setjob] = useState({});
-  const getJob = async () => {
+  const { idCandidato } = useParams();
+  const [candidate, setCandidate] = useState({});
+  const getCandidate = async () => {
     try {
-      const result = await api.get(`/vagas/${idVaga}`);
-      console.log(result);
-      setjob(result.data);
+      const result = await api.get(`/candidatos/${idCandidato}`);
+      //console.log(result);
+      setCandidate(result.data);
     } catch (error) {
       console.error(error);
     }
   };
 
   useEffect(() => {
-    getJob();
+    getCandidate();
   }, []);
   return (
     <>
-      {job && (
+      {candidate && (
         <div className="d-flex justify-content-center vh-100 flex-column align-items-center ">
           <div className=" card w-25  m-3">
-            {/* <div className="d-flex vh-100 flex-column align-items-center justify-content-center text-secondary "> */}
             <h3 className="card-header bg-primary text-light">
-              Vaga: {job.funcao}
+              {candidate.funcao}
             </h3>
             <div className="card-body d-flex flex-column justify-content-between text-secondary">
-              {/* <h3>Empresa: {job.empresaId.empresa}</h3> */}
-              <h4>Data: {job.data}</h4>
-              <h4>Horário: {job.horario}</h4>
-              <h4>Diária: {job.diaria}</h4>
-              <h4>Traje: {job.traje}</h4>
-              <h4>Fornece refeição: {job.fornece_refeicao}</h4>
-              <h4>Endereço: {job.endereco}</h4>
-              <h4>Cidade: {job.cidade}</h4>
-              <h4>Estado: {job.estado}</h4>
-              <button className="btn btn-light text-secondary">
-                Candidatar-se
-              </button>
+              <h4>Nome: {candidate.nome_e_sobrenome}</h4>
+              <h4>Idade: {candidate.idade}</h4>
+              <h4>Sexo: {candidate.sexo}</h4>
+              <h4>Bairro de Residência: {candidate.bairro_de_residencia}</h4>
+              <h4>Cidade: {candidate.cidade}</h4>
+              <h4>Estado: {candidate.estado}</h4>
+              <h4>
+                Possui meio de transporte próprio:{" "}
+                {candidate.possui_meio_de_transporte_proprio}
+              </h4>
+              <h4>Celular: {candidate.celular}</h4>
+              <h4>E-mail: {candidate.email}</h4>
             </div>
           </div>
         </div>
