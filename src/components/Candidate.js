@@ -9,7 +9,7 @@ const Candidate = () => {
   const [candidate, setCandidate] = useState({});
   const getCandidate = async () => {
     try {
-      const result = await api.get(`/candidatos/${idCandidato}`);
+      const result = await api.get(`/candidato/${idCandidato}`);
       //console.log(result);
       setCandidate(result.data);
     } catch (error) {
@@ -37,7 +37,7 @@ const Candidate = () => {
               <h4>Estado: {candidate.estado}</h4>
               <h4>
                 Possui meio de transporte próprio:{" "}
-                {candidate.possui_meio_de_transporte_proprio}
+                {candidate.possui_meio_de_transporte_proprio ? "Sim" : "Não"}
               </h4>
               <h4>Celular: {candidate.celular}</h4>
               <h4>E-mail: {candidate.email}</h4>

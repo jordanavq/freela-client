@@ -21,7 +21,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route exact path="/vagas" component={AllJobs} />
       <Route exact path="/vagas/:idVaga" component={Job} />
-      <Route exact path="/vagas/candidatura/:idVaga" component={Application} />
+      <Route exact path="/vagas/candidatura/:idVaga" component={Job} />
       <Route exact path="/candidatos" component={AllCandidates} />
       <Route exact path="/candidatos/:idCandidato" component={Candidate} />
     </div>
