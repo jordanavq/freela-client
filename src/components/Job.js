@@ -4,7 +4,7 @@ import { useState } from "react/cjs/react.development";
 import { useEffect } from "react";
 import api from "../api/api.config";
 
-const Job = () => {
+const Job = (props) => {
   const { idVaga } = useParams();
 
   const [job, setjob] = useState({});
@@ -14,7 +14,7 @@ const Job = () => {
   const getJob = async () => {
     try {
       const result = await api.get(`/vagas/${idVaga}`);
-      console.log(result);
+      /* console.log(result); */
       setjob(result.data);
     } catch (error) {
       console.error(error);
@@ -25,7 +25,10 @@ const Job = () => {
     e.preventDefault();
     try {
       const result = await api.post(`/vaga/candidatura/${idVaga}`);
-      console.log(result);
+
+      /*   console.log(result); */
+      window.alert("Candidatura enviada com sucesso!");
+      props.history.push("/");
     } catch (error) {
       console.error(error);
     }
@@ -53,15 +56,24 @@ const Job = () => {
               <h4>Endereço: {job.endereco}</h4>
               <h4>Cidade: {job.cidade}</h4>
               <h4>Estado: {job.estado}</h4>
+
               {user && user.nome_e_sobrenome ? (
                 <button
-                  onSubmit={handleSubmit}
+                  onClick={handleSubmit}
                   type="submit"
                   className="btn btn-light text-secondary"
                 >
                   Candidatar-se
                 </button>
-              ) : null}
+              ) : (
+                // eslint-disable-next-line react/jsx-no-undef
+                <Link
+                  to="/candidato/cadastro"
+                  className="btn btn-light text-secondary"
+                >
+                  Para se candidatar, faça login
+                </Link>
+              )}
             </div>
           </div>
         </div>
