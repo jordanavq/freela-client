@@ -7,9 +7,10 @@ import LoginCandidato from "./components/LoginCandidato";
 import Home from "./components/Home";
 import AllJobs from "./components/AllJobs";
 import Job from "./components/Job";
-import Application from "./components/Application";
 import AllCandidates from "./components/AllCandidates";
 import Candidate from "./components/Candidate";
+import LogoutCandidato from "./components/LogoutCandidato";
+import LogoutEmpresa from "./components/LogoutEmpresa";
 
 function App() {
   return (
@@ -21,9 +22,13 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route exact path="/vagas" component={AllJobs} />
       <Route exact path="/vagas/:idVaga" component={Job} />
-      <Route exact path="/vagas/candidatura/:idVaga" component={Application} />
+      <Route exact path="/vagas/candidatura/:idVaga" component={Job} />
       <Route exact path="/candidatos" component={AllCandidates} />
       <Route exact path="/candidatos/:idCandidato" component={Candidate} />
+      <Route exact path="/candidatos/:idCandidato" component={Candidate} />
+      <Route exact path="/candidatos/:idCandidato" component={Candidate} />
+      <Route exact path="/empresa/sair" component={LogoutEmpresa} />
+      <Route exact path="/candidato/sair" component={LogoutCandidato} />
     </div>
   );
 }

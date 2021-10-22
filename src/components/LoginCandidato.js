@@ -19,6 +19,7 @@ const LoginCandidato = (props) => {
     try {
       const result = await api.post("/candidato/entrar", formValues);
       localStorage.setItem("token", result.data.token);
+      localStorage.setItem("user", JSON.stringify(result.data.user));
       props.history.push("/");
     } catch (error) {
       console.error(error);
