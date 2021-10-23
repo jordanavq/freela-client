@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "../NavBar/index.css";
 
 const NavBar = () => {
+  const user = localStorage.getItem("token");
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <div className="container-fluid container navbar-fixed-top d-flex justify-content-between mr-0">
@@ -30,45 +31,63 @@ const NavBar = () => {
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-              >INFORMAÇÕES</h5>
+              >
+                INFORMAÇÕES
+              </h5>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li>
+                <li>
                   <Link exact to="" style={{ textDecoration: "none" }}>
                     <p className="dropdown-item">INÍCIO</p>
                   </Link>
                 </li>
+                <li>◦ EMPRESA</li>
                 <li>
-                ◦ EMPRESA
-                </li>
-                <li>
-                  <Link exact to="/empresa/entrar" style={{ textDecoration: "none" }}>
+                  <Link
+                    exact
+                    to="/empresa/entrar"
+                    style={{ textDecoration: "none" }}
+                  >
                     <p className="dropdown-item">Entrar</p>
                   </Link>
                 </li>
 
                 <li>
-                  <Link exact to="/empresa/cadastro" style={{ textDecoration: "none" }}>
+                  <Link
+                    exact
+                    to="/empresa/cadastro"
+                    style={{ textDecoration: "none" }}
+                  >
                     <p className="dropdown-item">Cadastrar</p>
                   </Link>
                 </li>
 
                 <li>
-                  <Link exact to="/candidatos" style={{ textDecoration: "none" }}>
+                  <Link
+                    exact
+                    to="/candidatos"
+                    style={{ textDecoration: "none" }}
+                  >
                     <p className="dropdown-item">Ver Candidatos</p>
                   </Link>
                 </li>
 
+                <li>◦ CANDIDATO</li>
                 <li>
-                ◦ CANDIDATO
-                </li>
-                <li>
-                  <Link exact to="/candidato/entrar" style={{ textDecoration: "none" }}>
+                  <Link
+                    exact
+                    to="/candidato/entrar"
+                    style={{ textDecoration: "none" }}
+                  >
                     <p className="dropdown-item">Entrar</p>
                   </Link>
                 </li>
 
                 <li>
-                  <Link exact to="/candidato/cadastro" style={{ textDecoration: "none" }}>
+                  <Link
+                    exact
+                    to="/candidato/cadastro"
+                    style={{ textDecoration: "none" }}
+                  >
                     <p className="dropdown-item">Cadastrar</p>
                   </Link>
                 </li>
@@ -79,9 +98,11 @@ const NavBar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link exact to="/sair" style={{ textDecoration: "none" }}>
-                    <p className="dropdown-item">Sair da conta</p>
-                  </Link>
+                  {user ? (
+                    <Link exact to="/sair" style={{ textDecoration: "none" }}>
+                      <p className="dropdown-item">Sair da conta</p>
+                    </Link>
+                  ) : null}
                 </li>
               </ul>
             </li>
@@ -93,4 +114,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
