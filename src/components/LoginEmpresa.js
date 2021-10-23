@@ -19,6 +19,7 @@ const LoginEmpresa = (props) => {
     try {
       const result = await api.post("/empresa/entrar", formValues);
       localStorage.setItem("token", result.data.token);
+      localStorage.setItem("user", JSON.stringify(result.data.user));
       props.history.push("/");
     } catch (error) {
       console.error(error);
@@ -32,7 +33,6 @@ const LoginEmpresa = (props) => {
       </div>
       <form
         onSubmit={handleSubmit}
-        
         className="w-100 d-flex flex-column align-items-center"
       >
         <label>E-mail:</label>

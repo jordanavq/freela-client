@@ -21,9 +21,12 @@ const SignupCandidato = () => {
   const [formValues, setFormValues] = useState({ ...INITIAL_FORM });
   const history = useHistory();
 
-  const handleChange = ({ target  }) => {
+  const handleChange = ({ target }) => {
     const { name, value, checked, type } = target;
-    setFormValues({ ...formValues, [name]: type==="checkbox"? checked: value });
+    setFormValues({
+      ...formValues,
+      [name]: type === "checkbox" ? checked : value,
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -110,7 +113,7 @@ const SignupCandidato = () => {
         />
 
         <div className="form-check">
-        <label className="form-check-label">
+          <label className="form-check-label">
             Possui meio de transporte próprio
           </label>
           <input
@@ -118,9 +121,8 @@ const SignupCandidato = () => {
             className="form-check-input"
             onChange={handleChange}
             name="possui_meio_de_transporte_proprio"
-            checked={formValues.possui_meio_de_transporte_proprio || false }
+            checked={formValues.possui_meio_de_transporte_proprio || false}
           />
-         
         </div>
 
         <label>Celular:</label>
