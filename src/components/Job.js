@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router";
 import { useState } from "react/cjs/react.development";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import api from "../api/api.config";
 
 const Job = (props) => {
@@ -66,9 +67,8 @@ const Job = (props) => {
                   Candidatar-se
                 </button>
               ) : (
-                // eslint-disable-next-line react/jsx-no-undef
                 <Link
-                  to="/candidato/cadastro"
+                  to="/candidato/entrar"
                   className="btn btn-light text-secondary"
                 >
                   Para se candidatar, faça login

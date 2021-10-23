@@ -27,10 +27,10 @@ function App() {
         <Route exact path="/vagas" component={AllJobs} />
         <Route exact path="/vagas/:idVaga" component={Job} />
         <Route exact path="/vagas/candidatura/:idVaga" component={Job} />
-        <Route exact path="/candidatos" component={AllCandidates} />
+        <Route exact path="/candidatos" component={AllCandidates} />      
         <Route exact path="/candidatos/:idCandidato" component={Candidate} />
-        <Route exact path="/candidatos/:idCandidato" component={Candidate} />
-        <Route exact path="/candidatos/:idCandidato" component={Candidate} />
+        <Route exact path="/empresa/sair" component={LogoutEmpresa} />
+        <Route exact path="/candidato/sair" component={LogoutCandidato} />
         <Route exact path="/empresa/sair" component={LogoutEmpresa} />
         <Route exact path="/candidato/sair" component={LogoutCandidato} />
       </div>
