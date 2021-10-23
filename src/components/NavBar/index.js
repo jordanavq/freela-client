@@ -32,53 +32,48 @@ const NavBar = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                INFORMAÇÕES
+                INFO
               </h5>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <Link exact to="" style={{ textDecoration: "none" }}>
-                    <p className="dropdown-item">INÍCIO</p>
+                  <Link
+                    className="dropdown-item fw-bold"
+                    exact
+                    to="/"
+                    style={{ textDecoration: "none" }}
+                  >
+                    INÍCIO
                   </Link>
                 </li>
-                <li>◦ EMPRESA</li>
+                <li className="fw-bold m-3">ENTRAR</li>
                 <li>
                   <Link
                     exact
                     to="/empresa/entrar"
                     style={{ textDecoration: "none" }}
                   >
-                    <p className="dropdown-item">Entrar</p>
+                    <p className="dropdown-item">Empresa</p>
                   </Link>
                 </li>
 
-                <li>
-                  <Link
-                    exact
-                    to="/empresa/cadastro"
-                    style={{ textDecoration: "none" }}
-                  >
-                    <p className="dropdown-item">Cadastrar</p>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    exact
-                    to="/candidatos"
-                    style={{ textDecoration: "none" }}
-                  >
-                    <p className="dropdown-item">Ver Candidatos</p>
-                  </Link>
-                </li>
-
-                <li>◦ CANDIDATO</li>
                 <li>
                   <Link
                     exact
                     to="/candidato/entrar"
                     style={{ textDecoration: "none" }}
                   >
-                    <p className="dropdown-item">Entrar</p>
+                    <p className="dropdown-item">Candidato</p>
+                  </Link>
+                </li>
+
+                <li className="fw-bold m-3">CADASTRAR</li>
+                <li>
+                  <Link
+                    exact
+                    to="/empresa/cadastro"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <p className="dropdown-item">Empresa</p>
                   </Link>
                 </li>
 
@@ -88,19 +83,30 @@ const NavBar = () => {
                     to="/candidato/cadastro"
                     style={{ textDecoration: "none" }}
                   >
-                    <p className="dropdown-item">Cadastrar</p>
+                    <p className="dropdown-item">Candidato</p>
                   </Link>
                 </li>
 
                 <li>
                   <Link exact to="/vagas" style={{ textDecoration: "none" }}>
-                    <p className="dropdown-item">Ver Vagas</p>
+                    <p className="dropdown-item fw-bold">VER VAGAS</p>
                   </Link>
                 </li>
+
+                <li>
+                  <Link
+                    exact
+                    to="/candidatos"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <p className="dropdown-item fw-bold">VER CANDIDATOS</p>
+                  </Link>
+                </li>
+
                 <li>
                   {user ? (
                     <Link exact to="/sair" style={{ textDecoration: "none" }}>
-                      <p className="dropdown-item">Sair da conta</p>
+                      <p className="dropdown-item fw-bold"> SAIR DA CONTA</p>
                     </Link>
                   ) : null}
                 </li>
