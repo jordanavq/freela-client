@@ -15,7 +15,7 @@ const Job = (props) => {
   const getJob = async () => {
     try {
       const result = await api.get(`/vagas/${idVaga}`);
-      /* console.log(result); */
+      console.log(result.data.candidatosId.includes(user.id));
       setjob(result.data);
     } catch (error) {
       console.error(error);
@@ -59,13 +59,24 @@ const Job = (props) => {
               <h4>Estado: {job.estado}</h4>
 
               {user && user.nome_e_sobrenome ? (
-                <button
-                  onClick={handleSubmit}
-                  type="submit"
-                  className="btn btn-light text-secondary"
-                >
-                  Candidatar-se
-                </button>
+                job.candidatosId.includes(user.id) ? (
+                  <button
+                    disabled
+                    onClick={handleSubmit}
+                    type="submit"
+                    className="btn btn-light text-secondary"
+                  >
+                    Candidatura enviada!
+                  </button>
+                ) : (
+                  <button
+                    onClick={handleSubmit}
+                    type="submit"
+                    className="btn btn-light text-secondary"
+                  >
+                    Candidatar-se
+                  </button>
+                )
               ) : (
                 <Link
                   to="/candidato/entrar"

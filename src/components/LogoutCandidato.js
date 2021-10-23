@@ -4,7 +4,7 @@ const LogoutCandidato = () => {
   useEffect(() => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    window.location = "/candidato/entrar";
+    window.location = "/";
   }, []);
   return <div></div>;
 };
