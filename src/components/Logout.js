@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 
-const LogoutEmpresa = () => {
+const Logout = () => {
   useEffect(() => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    window.location = "/empresa/entrar";
+    window.location = "/";
   }, []);
   return <div></div>;
 };
 
-export default LogoutEmpresa;
+export default Logout;

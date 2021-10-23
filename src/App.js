@@ -11,8 +11,7 @@ import HomeMain from "./components/HomeMain/index.js";
 import Job from "./components/Job";
 import AllCandidates from "./components/AllCandidates";
 import Candidate from "./components/Candidate";
-import LogoutCandidato from "./components/LogoutCandidato";
-import LogoutEmpresa from "./components/LogoutEmpresa";
+import Logout from "./components/Logout";
 
 function App() {
   return (
@@ -27,12 +26,9 @@ function App() {
         <Route exact path="/vagas" component={AllJobs} />
         <Route exact path="/vagas/:idVaga" component={Job} />
         <Route exact path="/vagas/candidatura/:idVaga" component={Job} />
-        <Route exact path="/candidatos" component={AllCandidates} />      
+        <Route exact path="/candidatos" component={AllCandidates} />
         <Route exact path="/candidatos/:idCandidato" component={Candidate} />
-        <Route exact path="/empresa/sair" component={LogoutEmpresa} />
-        <Route exact path="/candidato/sair" component={LogoutCandidato} />
-        <Route exact path="/empresa/sair" component={LogoutEmpresa} />
-        <Route exact path="/candidato/sair" component={LogoutCandidato} />
+        <Route exact path="/sair" component={Logout} />
       </div>
       <Footer />
     </div>
