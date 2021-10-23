@@ -6,7 +6,7 @@ import "../NavBar/index.css";
 const NavBar = () => {
   return(
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-  <div className="container-fluid container navbar-fixed-top">
+  <div className="container-fluid container navbar-fixed-top d-flex justify-content-between mr-0">
   <Link exact to="/">
           <img
             className="logo-navbar"
@@ -17,21 +17,23 @@ const NavBar = () => {
           />
         </Link>
     
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+    <div className="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         
-          <Link exact to="/">
+          
           <li className="nav-item">
-          <h5 className="nav-link active margin-left" aria-current="page"><div id="style">ENTRAR</div></h5>
-          </li>
+          <Link exact to="/" style={{textDecoration:"none"}}>
+          <h5 className="nav-link active margin-left" aria-current="page">ENTRAR</h5>
           </Link>
+
+          </li>
           <Link exact to="/">
           <li className="nav-item">
           <h5 className="nav-link active" aria-current="page" ><div id="style">CADASTRAR</div></h5>
           </li>
           </Link>
-        <li className="nav-item dropdown">
-         <h5 className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li className="nav-item dropdown ">
+         <h5 className="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           </h5>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown" >
             <li>

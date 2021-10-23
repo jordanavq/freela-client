@@ -25,9 +25,8 @@ const Job = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const result = await api.post(`/vaga/candidatura/${idVaga}`);
+       await api.post(`/vaga/candidatura/${idVaga}`);
 
-      /*   console.log(result); */
       window.alert("Candidatura enviada com sucesso!");
       props.history.push("/");
     } catch (error) {

@@ -1,22 +1,21 @@
 .ImgMain{
-    margin-top: 60px;
+    margin-top: 10px;
     justify-content: center;
 }
 
 .LogoMain{
-    margin-top: -645px;
+    position: absolute;
+    left: 39%;
+    top: 0;
 }
 
 .Main-text{
-    justify-content: center;
-    margin-top: -155px;
     text-align: center;
     font-weight: bold;
     display: block;
-    border: 5px solid white;
-    margin-left: 415px;
-    margin-right: 415px;
-    background-color: white;
+    margin: 1rem;
+    margin-bottom: 2rem;
+    width: 50%;
 }
 
 button{
