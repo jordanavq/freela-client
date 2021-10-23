@@ -1,0 +1,16 @@
+.navbar-fixed-top {
+    height: 55px; 
+    margin-left: 20px;
+}
+
+
+#style{
+    text-decoration: none; /*não quer funcionar */
+    color: white;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.margin-left{
+    margin-left: 650px;
+}
