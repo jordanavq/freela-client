@@ -10,7 +10,6 @@ const Candidate = () => {
   const getCandidate = async () => {
     try {
       const result = await api.get(`/candidato/${idCandidato}`);
-      //console.log(result);
       setCandidate(result.data);
     } catch (error) {
       console.error(error);

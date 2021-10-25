@@ -13,7 +13,7 @@ const HomeInfo = () => {
             <div className="col">
               <div className="card h-100">
                 <div className="card-body">
-                  <h5 className="card-title bg-primary text-light rounded">
+                  <h5 className="card-title bg-primary text-light rounded p-1 pt-2">
                     CADASTRE-SE
                   </h5>
                   <p className="card-text font-weight-light">
@@ -26,7 +26,7 @@ const HomeInfo = () => {
             <div className="col">
               <div className="card h-100">
                 <div className="card-body">
-                  <h5 className="card-title bg-primary text-light rounded">
+                  <h5 className="card-title bg-primary text-light rounded p-1 pt-2">
                     BUSQUE
                   </h5>
                   <p className="card-text font-weight-light">
@@ -38,10 +38,10 @@ const HomeInfo = () => {
             <div className="col">
               <div className="card h-100">
                 <div className="card-body">
-                  <h5 className="card-title bg-primary text-light rounded">
+                  <h5 className="card-title bg-primary text-light rounded p-1 pt-2">
                     CANDIDATURA
                   </h5>
-                  <p className="card-text font-weight-light">
+                  <p className="card-text font-weight-light text-align-justify">
                     Envie sua candidatura para empresa solicitante ou entre em
                     contato com o candidato escolhido.
                   </p>
