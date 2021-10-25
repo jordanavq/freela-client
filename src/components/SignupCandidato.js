@@ -40,7 +40,7 @@ const SignupCandidato = () => {
     }
   };
   return (
-    <div className="d-flex vh-100 flex-column align-items-center justify-content-center">
+    <div className="d-flex vh-75 flex-column align-items-center justify-content-center">
       <div>
         <h2>Cadastro Candidato</h2>
       </div>
