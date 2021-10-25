@@ -1,0 +1,32 @@
+.find{
+    display:grid;
+    width: 30%;
+}
+
+.how{
+    width:70%;
+}
+
+.dflex{
+    display: flex;
+    margin: 1%;
+}
+
+.comment{
+    width: 30%;
+    height: 10%;
+}
+
+.cards{
+    display: inline-flex;
+    justify-content: center;
+}
+
+.size{
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.card-text{
+    text-align: justify;
+}

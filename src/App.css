@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+
 .App {
   text-align: center;
   padding-top: 71px;
   margin-bottom: 130px;
+}
+
+body {
+  font-family: 'Josefin Sans';
 }

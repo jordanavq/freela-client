@@ -13,6 +13,8 @@ import AllCandidates from "./components/AllCandidates";
 import Candidate from "./components/Candidate";
 import Logout from "./components/Logout";
 import ProfileCandidate from "./components/ProfileCandidate";
+import HomeInfo from "./components/HomeInfo";
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
       <NavBar />
       <div className="App">
         <Route exact path="/" component={HomeMain} />
+        <Route exact path="/" component={HomeInfo} />
         <Route exact path="/empresa/cadastro" component={SignupEmpresa} />
         <Route exact path="/empresa/entrar" component={LoginEmpresa} />
         <Route exact path="/candidato/cadastro" component={SignupCandidato} />
