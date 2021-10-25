@@ -41,7 +41,7 @@ const HomeInfo = () => {
                   <h5 className="card-title bg-primary text-light rounded p-1 pt-2">
                     CANDIDATURA
                   </h5>
-                  <p className="card-text font-weight-light text-align-justify">
+                  <p className="card-text font-weight-light">
                     Envie sua candidatura para empresa solicitante ou entre em
                     contato com o candidato escolhido.
                   </p>
