@@ -30,7 +30,7 @@ const HomeMain = () => {
       </div>
 
       <div>
-        <Link exact to="/">
+        <Link exact to="/vagas">
           <button type="button" class="btn btn-primary btn-lg">
             QUERO TRABALHAR
           </button>
