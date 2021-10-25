@@ -12,6 +12,7 @@ import Job from "./components/Job";
 import AllCandidates from "./components/AllCandidates";
 import Candidate from "./components/Candidate";
 import Logout from "./components/Logout";
+import ProfileCandidate from "./components/ProfileCandidate";
 
 function App() {
   return (
@@ -27,8 +28,13 @@ function App() {
         <Route exact path="/vagas/:idVaga" component={Job} />
         <Route exact path="/vagas/candidatura/:idVaga" component={Job} />
         <Route exact path="/candidatos" component={AllCandidates} />
-        <Route exact path="/candidatos/:idCandidato" component={Candidate} />
+        <Route exact path="/candidatos/:candidatoId" component={Candidate} />
         <Route exact path="/sair" component={Logout} />
+        <Route
+          exact
+          path="/candidato/:candidatoId"
+          component={ProfileCandidate}
+        />
       </div>
       <Footer />
     </div>
