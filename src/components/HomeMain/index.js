@@ -31,12 +31,12 @@ const HomeMain = () => {
 
       <div>
         <Link exact to="/candidato/cadastro">
-          <button type="button" class="btn btn-primary btn-lg">
+          <button type="button" class=" button btn btn-lg">
             QUERO TRABALHAR
           </button>
         </Link>
         <Link exact to="/empresa/cadastro">
-          <button type="button" class="btn btn-primary btn-lg">
+          <button type="button" class=" button btn btn-lg">
             QUERO ANUNCIAR
           </button>
         </Link>

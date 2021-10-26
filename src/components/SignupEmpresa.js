@@ -36,7 +36,7 @@ const SignupEmpresa = () => {
         onSubmit={handleSubmit}
         className="w-100 d-flex flex-column align-items-center"
       >
-        <label>Empresa:</label>
+        <label className="mt-3">Empresa:</label>
         <input
           className="form-control w-25"
           type="text"
@@ -45,7 +45,7 @@ const SignupEmpresa = () => {
           onChange={handleChange}
         />
 
-        <label>E-mail:</label>
+        <label className="mt-3">E-mail:</label>
         <input
           className="form-control w-25"
           type="text"
@@ -54,7 +54,7 @@ const SignupEmpresa = () => {
           onChange={handleChange}
         />
 
-        <label>Senha:</label>
+        <label className="mt-3">Senha:</label>
         <input
           className="form-control w-25"
           type="password"

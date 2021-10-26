@@ -48,7 +48,7 @@ const SignupCandidato = () => {
         onSubmit={handleSubmit}
         className="w-100 d-flex flex-column align-items-center"
       >
-        <label>Nome e Sobrenome:</label>
+        <label className="mt-3">Nome e Sobrenome:</label>
         <input
           className="form-control w-25"
           type="text"
@@ -57,7 +57,7 @@ const SignupCandidato = () => {
           onChange={handleChange}
         />
 
-        <label>Função:</label>
+        <label className="mt-3">Função:</label>
         <input
           className="form-control w-25"
           type="text"
@@ -66,7 +66,7 @@ const SignupCandidato = () => {
           onChange={handleChange}
         />
 
-        <label>Idade:</label>
+        <label className="mt-3">Idade:</label>
         <input
           className="form-control w-25"
           type="number"
@@ -76,7 +76,7 @@ const SignupCandidato = () => {
           onChange={handleChange}
         />
 
-        <label>Sexo:</label>
+        <label className="mt-3">Sexo:</label>
         <input
           className="form-control w-25"
           type="text"
@@ -85,7 +85,7 @@ const SignupCandidato = () => {
           onChange={handleChange}
         />
 
-        <label>Bairro de Residência:</label>
+        <label className="mt-3">Bairro de Residência:</label>
         <input
           className="form-control w-25"
           type="text"
@@ -94,7 +94,7 @@ const SignupCandidato = () => {
           onChange={handleChange}
         />
 
-        <label>Cidade:</label>
+        <label className="mt-3">Cidade:</label>
         <input
           className="form-control w-25"
           type="text"
@@ -103,7 +103,7 @@ const SignupCandidato = () => {
           onChange={handleChange}
         />
 
-        <label>Estado:</label>
+        <label className="mt-3">Estado:</label>
         <input
           className="form-control w-25"
           type="text"
@@ -112,7 +112,7 @@ const SignupCandidato = () => {
           onChange={handleChange}
         />
 
-        <div className="form-check">
+        <div className="form-check mt-3">
           <label className="form-check-label">
             Possui meio de transporte próprio
           </label>
@@ -125,7 +125,7 @@ const SignupCandidato = () => {
           />
         </div>
 
-        <label>Celular:</label>
+        <label className="mt-3">Celular:</label>
         <input
           className="form-control w-25"
           type="text"
@@ -134,7 +134,7 @@ const SignupCandidato = () => {
           onChange={handleChange}
         />
 
-        <label>E-mail:</label>
+        <label className="mt-3">E-mail:</label>
         <input
           className="form-control w-25"
           type="text"
@@ -143,7 +143,7 @@ const SignupCandidato = () => {
           onChange={handleChange}
         />
 
-        <label>Senha:</label>
+        <label className="mt-3">Senha:</label>
         <input
           className="form-control w-25"
           type="password"
