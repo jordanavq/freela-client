@@ -7,7 +7,6 @@ const NavBar = (props) => {
   const user = localStorage.getItem("token");
   const user2 = props.user;
 
-  console.log("navbar", typeof user2);
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <div className="container-fluid container navbar-fixed-top d-flex justify-content-between mr-0">
