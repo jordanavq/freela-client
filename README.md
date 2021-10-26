@@ -32,7 +32,7 @@
 
 ## 📊 Presentation
 
-Click [HERE](https://slides.com/deboraaguiartavares/gamehub-project-02-ironhack/fullscreen) to see our project presentation.
+Click [HERE](https://slides.com/deboraaguiartavares/freela-english-presentation/fullscreen) to see our project presentation.
 
 ### 🎁 Expressions of gratitude
 
