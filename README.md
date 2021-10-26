@@ -2,8 +2,9 @@
 
 (Project Module 3 Ironhack)
 
- Click [HERE](https://project2gamehub.herokuapp.com/
-) to enjoy *Freela*
+ ![Start Screen](./images/home-freela.png)
+
+ Click [HERE](https://freela-app.herokuapp.com/) to enjoy *Freela*
 
 ### Introduction
 
@@ -14,9 +15,8 @@
 ## 🚀 How to enjoy and requirements
 
 * You will need to have an electronic device with internet access.
-* Click [HERE](https://project2gamehub.herokuapp.com/
-) to open the website.
-* Now feel free to check out everything we've made available on the Game Hub.
+* Click [HERE](https://freela-app.herokuapp.com/) to open the website.
+* Now feel free to check out everything we've made available on the Freela.
 
 ## 📦 Development
 
