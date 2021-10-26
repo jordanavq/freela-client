@@ -14,30 +14,32 @@ import Candidate from "./components/Candidate";
 import Logout from "./components/Logout";
 import ProfileCandidate from "./components/ProfileCandidate";
 import HomeInfo from "./components/HomeInfo";
-
+import { useState } from "react";
 
 function App() {
+  const [user, setUser] = useState();
+
   return (
     <div>
-      <NavBar />
+      <NavBar user={user} />
       <div className="App">
         <Route exact path="/" component={HomeMain} />
         <Route exact path="/" component={HomeInfo} />
         <Route exact path="/empresa/cadastro" component={SignupEmpresa} />
         <Route exact path="/empresa/entrar" component={LoginEmpresa} />
         <Route exact path="/candidato/cadastro" component={SignupCandidato} />
-        <Route exact path="/candidato/entrar" component={LoginCandidato} />
+        <Route
+          exact
+          path="/candidato/entrar"
+          render={(props) => <LoginCandidato {...props} setUser={setUser} />}
+        />
         <Route exact path="/vagas" component={AllJobs} />
         <Route exact path="/vagas/:idVaga" component={Job} />
         <Route exact path="/vagas/candidatura/:idVaga" component={Job} />
         <Route exact path="/candidatos" component={AllCandidates} />
         <Route exact path="/candidatos/:candidatoId" component={Candidate} />
         <Route exact path="/sair" component={Logout} />
-        <Route
-          exact
-          path="/candidato/:candidatoId"
-          component={ProfileCandidate}
-        />
+        <Route exact path="/perfil/:candidatoId" component={ProfileCandidate} />
       </div>
       <Footer />
     </div>

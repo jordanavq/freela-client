@@ -3,8 +3,11 @@ import logo from "../../images/Logo-Freela.png";
 import { Link } from "react-router-dom";
 import "../NavBar/index.css";
 
-const NavBar = () => {
+const NavBar = (props) => {
   const user = localStorage.getItem("token");
+  const user2 = props.user;
+
+  console.log("navbar", typeof user2);
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <div className="container-fluid container navbar-fixed-top d-flex justify-content-between mr-0">
@@ -101,6 +104,18 @@ const NavBar = () => {
                   >
                     <p className="dropdown-item fw-bold">VER CANDIDATOS</p>
                   </Link>
+                </li>
+
+                <li>
+                  {user2 ? (
+                    <Link
+                      exact
+                      to={`/perfil/${user2.id}`}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <p className="dropdown-item fw-bold">Meu perfil</p>
+                    </Link>
+                  ) : null}
                 </li>
 
                 <li>

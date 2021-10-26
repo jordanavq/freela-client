@@ -1,13 +1,12 @@
-import axios from 'axios';
-
-const token = localStorage.getItem("token");
-
+import axios from "axios";
 
 const api = axios.create({
-
-    baseURL:process.env.REACT_APP_API,
-    headers:{"Authorization": `Bearer ${token}`}
-
+  baseURL: process.env.REACT_APP_API,
+});
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem("token");
+  config.headers = { Authorization: `Bearer ${token}` };
+  return config;
 });
 
 export default api;
