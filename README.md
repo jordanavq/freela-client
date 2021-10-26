@@ -34,10 +34,12 @@
 
 Click [HERE](https://slides.com/deboraaguiartavares/freela-english-presentation/fullscreen) to see our project presentation.
 
-### 🎁 Expressions of gratitude
+### 🎁 Expressions of gratitude 
 
 * We would like to thank the *Ironhack* school for the experience and learning that is provided to us.
 The teachers *Daniel K Albanez (DK), **Gabriel Sicuto* and *Júlia Foresti*, for the way that the content is presented in the classroom and the support of doubts inside and outside the classroom.
 Thank you very much for this second module 🤓.
 
-Developer: ⌨️ with 💜 by Jordana Queiroz [(GitHub)](https://github.com/jordanavq) and Debora Tavares [(GitHub)](https://github.com/DeAT1995) 👊
+Developer: ⌨️ with 💜 by Jordana Queiroz [](https://github.com/jordanavq) and Debora Tavares [(GitHub)](https://github.com/DeAT1995) 👊
+
+:octocat:
