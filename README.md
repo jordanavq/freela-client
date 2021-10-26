@@ -2,7 +2,7 @@
 
 (Project Module 3 Ironhack)
 
- ![Start Screen](./images/home-freela.png)
+ ![Start Screen](./src/images/home-freela.png)
 
  Click [HERE](https://freela-app.herokuapp.com/) to enjoy *Freela*
 
