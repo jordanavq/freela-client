@@ -21,11 +21,11 @@ const AllCandidates = () => {
 
   return (
     <div>
-      <h1 className=" p-2 text-primary">Candidatos</h1>
+      <h1 className=" p-2 text-dark">CANDIDATOS</h1>
       <div className="p-3 d-flex">
         {jobs.map((item) => (
           <div className="card m-3" style={{ width: "18rem" }} key={item._id}>
-            <h4 className="card-header bg-primary text-light">{item.funcao}</h4>
+            <h4 className="card-header bg-primary text-light p-2 text-uppercase pt-3">{item.funcao}</h4>
             <div className="card-body d-flex flex-column justify-content-between text-secondary">
               <h5>Nome: {item.nome_e_sobrenome}</h5>
               <h5>Cidade: {item.cidade}</h5>

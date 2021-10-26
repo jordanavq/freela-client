@@ -51,7 +51,7 @@ const HomeInfo = () => {
           </div>
         </div>
         <div className="border border-primary rounded-2 border-3 find p-3 m-1">
-          <h4>Encontre aqui</h4>
+          <h4 className="font-weight-bold">Encontre aqui</h4>
           <Link exact to="/vagas">
             <button
               type="button"
