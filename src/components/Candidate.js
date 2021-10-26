@@ -5,11 +5,12 @@ import { useEffect } from "react";
 import api from "../api/api.config";
 
 const Candidate = () => {
-  const { idCandidato } = useParams();
+  const { candidatoId } = useParams();
+  console.log(useParams());
   const [candidate, setCandidate] = useState({});
   const getCandidate = async () => {
     try {
-      const result = await api.get(`/candidato/${idCandidato}`);
+      const result = await api.get(`/candidato/${candidatoId}`);
       setCandidate(result.data);
     } catch (error) {
       console.error(error);

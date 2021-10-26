@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router";
 import api from "../api/api.config";
 
 const INITIAL_FORM = {
@@ -8,67 +7,132 @@ const INITIAL_FORM = {
   funcao: "",
   diaria: "",
   traje: "",
-  fornece_refeicao: "",
+  fornece_refeicao: false,
   endereco: "",
   cidade: "",
   estado: "",
 };
 
-const JobApplication = () => {
+const JobApplication = (props) => {
   const [formValues, setFormValues] = useState({ ...INITIAL_FORM });
-  const history = useHistory();
 
-  const handleChange = ({ target: { name, value } }) => {
-    setFormValues({ ...formValues, [name]: value });
+  const handleChange = ({ target: { name, value, checked, type } }) => {
+    setFormValues({
+      ...formValues,
+      [name]: type === "checkbox" ? checked : value,
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //fazer if (formValues.senha === formValues.confirmarSenha (para confirmar senha))
+
     try {
-      await api.post("/empresa/cadastro", formValues);
-      history.push("/empresa/entrar");
+      await api.post("/vaga/cadastro", formValues);
+      window.alert("Vaga cadastrada com sucesso!");
+      props.history.push("/");
     } catch (error) {
-      console.error(error);
+      console.error(error.response);
     }
   };
   return (
-    <div className="d-flex vh-100 flex-column align-items-center justify-content-center">
+    <div className="d-flex vh-75 flex-column align-items-center justify-content-center">
       <div>
-        <h2>Cadastro Empresa</h2>
+        <h2>Cadastrar Vaga</h2>
       </div>
       <form
         onSubmit={handleSubmit}
         className="w-100 d-flex flex-column align-items-center"
       >
-        <label>Empresa:</label>
+        <label>Data:</label>
         <input
           className="form-control w-25"
           type="text"
-          name="empresa"
-          value={formValues.empresa}
+          name="data"
+          value={formValues.data}
           onChange={handleChange}
         />
 
-        <label>E-mail:</label>
+        <label>Horário:</label>
         <input
           className="form-control w-25"
           type="text"
-          name="email"
-          value={formValues.email}
+          name="horario"
+          value={formValues.horario}
           onChange={handleChange}
         />
 
-        <label>Senha:</label>
+        <label>Função:</label>
         <input
           className="form-control w-25"
-          type="password"
-          name="senha"
-          value={formValues.senha}
+          type="text"
+          name="funcao"
+          value={formValues.funcao}
           onChange={handleChange}
         />
 
-        <button className="btn btn-primary mt-3">Cadastrar</button>
+        <label>Diária:</label>
+        <input
+          className="form-control w-25"
+          type="text"
+          name="diaria"
+          value={formValues.diaria}
+          onChange={handleChange}
+        />
+
+        <label>Traje:</label>
+        <input
+          className="form-control w-25"
+          type="text"
+          name="traje"
+          value={formValues.traje}
+          onChange={handleChange}
+        />
+
+        <div className="form-check p-2">
+          <label className="form-check-label">Fornece Refeição</label>
+          <input
+            type="checkbox"
+            className="form-check-input"
+            name="fornece_refeicao"
+            checked={formValues.fornece_refeicao || false}
+            onChange={handleChange}
+          />
+        </div>
+
+        <label>Endereço:</label>
+        <input
+          className="form-control w-25"
+          type="text"
+          name="endereco"
+          value={formValues.endereco}
+          onChange={handleChange}
+        />
+
+        <label>Cidade:</label>
+        <input
+          className="form-control w-25"
+          type="text"
+          name="cidade"
+          value={formValues.cidade}
+          onChange={handleChange}
+        />
+
+        <label>Estado:</label>
+        <input
+          className="form-control w-25"
+          type="text"
+          name="estado"
+          value={formValues.estado}
+          onChange={handleChange}
+        />
+
+        <button
+          onClick={handleSubmit}
+          type="submit"
+          className="btn btn-primary mt-3"
+        >
+          Cadastrar
+        </button>
       </form>
     </div>
   );
