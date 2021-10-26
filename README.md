@@ -40,4 +40,4 @@ Click [HERE](https://slides.com/deboraaguiartavares/freela-english-presentation/
 The teachers *Daniel K Albanez (DK), **Gabriel Sicuto* and *Júlia Foresti*, for the way that the content is presented in the classroom and the support of doubts inside and outside the classroom.
 Thank you very much for this second module 🤓.
 
-Developer: ⌨️ with 💜 by Jordana Queiroz  [:octocat:](https://github.com/jordanavq)  and Debora Tavares  [:octocat:](https://github.com/DeAT1995)  👊
+Developer: ⌨️ with 💜 by Jordana Queiroz  [:octocat:](https://github.com/jordanavq)  and Debora Tavares  [:octocat:](https://github.com/DeAT1995) 
