@@ -28,7 +28,7 @@ const NavBar = (props) => {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item dropdown ">
               <h5
-                className="nav-link dropdown-toggle text-light"
+                className="nav-link dropdown-toggle text-light p-1 mt-2"
                 href="#"
                 id="navbarDropdown"
                 role="button"

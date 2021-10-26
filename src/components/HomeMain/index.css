@@ -14,10 +14,12 @@
     font-weight: bold;
     display: block;
     margin: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     width: 40%;
 }
 
-button{
+.button{
     margin-left: 10px;
+    background-color: rgb(101, 194, 183);
+    color: white;
 }

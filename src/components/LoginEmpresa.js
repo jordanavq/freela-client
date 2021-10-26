@@ -35,7 +35,7 @@ const LoginEmpresa = (props) => {
         onSubmit={handleSubmit}
         className="w-100 d-flex flex-column align-items-center"
       >
-        <label>E-mail:</label>
+        <label className="m-2">E-mail:</label>
         <input
           className="form-control w-25"
           type="text"
@@ -44,7 +44,7 @@ const LoginEmpresa = (props) => {
           onChange={handleChange}
         />
 
-        <label>Senha:</label>
+        <label className="m-2">Senha:</label>
         <input
           className="form-control w-25"
           type="password"
