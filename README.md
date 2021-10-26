@@ -8,7 +8,7 @@
 
 * Project module 3, Web Development course Ironhack "WDPT" MAY 2021.
     
-* Escrever sobre o site..
+* Freela is a website created with the purpose of meeting the needs of both owners and managers of restaurants and bars when hiring a freelance professional, as well as providing more chances for these professionals to show themselves available to more interested companies. We promote communication and connection between those looking for your vacancy and those looking for your candidate.
 
 ## 🚀 How to enjoy and requirements
 
