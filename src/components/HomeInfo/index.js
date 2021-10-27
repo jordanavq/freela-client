@@ -79,6 +79,23 @@ const HomeInfo = () => {
         <div className="cards m-3">
           <div class="card comment m-2">
             <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p className="size">
+                  Me cadastrar no Freela foi um divisor de águas na minha
+                  carreira, desde que me cadastrei obtive contato com muitos
+                  lugares sensacionais para trabalhar. Há vagas diversas e para
+                  todos os perfis aqui, uso e recomendo!
+                </p>
+
+                <footer class="blockquote-footer">
+                  <cite title="Título da fonte">Dora Aguiar,</cite>
+                  hostess cadastrada no Freela desde 2021.
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+          <div class="card comment m-2">
+            <div class="card-body">
               <blockquote class="blockquote mb-0 p-1 m-1">
                 <p className="size">
                   Desde o princípio minha experiência com o Freela foi
@@ -96,19 +113,22 @@ const HomeInfo = () => {
               </blockquote>
             </div>
           </div>
+
           <div class="card comment m-2">
             <div class="card-body">
               <blockquote class="blockquote mb-0">
                 <p className="size">
-                  Me cadastrar no Freela foi um divisor de águas na minha
-                  carreira, desde que me cadastrei obtive contato com muitos
-                  lugares sensacionais para trabalhar. Há vagas diversas e para
-                  todos os perfis aqui, uso e recomendo!
+                  Como bartender já estive tanto na posição de contratante como
+                  na de contratado, e fazer uso do Freela me salvou diversas
+                  vezes, tanto na hora de disponibilizar meus serviços como ao
+                  contratar alguém para contribuir na minha equipe de
+                  freelancers. Tenho contato sempre com equipes excelentes e
+                  profissionais capacitados, usarei sempre!
                 </p>
 
                 <footer class="blockquote-footer">
-                  <cite title="Título da fonte">Dora Aguiar,</cite>
-                  hostess cadastrada no Freela desde 2021.
+                  <cite title="Título da fonte">Scott Summers,</cite>
+                  bartender cadastrado no Freela desde 2021.
                 </footer>
               </blockquote>
             </div>
