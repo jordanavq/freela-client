@@ -20,13 +20,15 @@ const LoginEmpresa = (props) => {
       const result = await api.post("/empresa/entrar", formValues);
       localStorage.setItem("token", result.data.token);
       localStorage.setItem("user", JSON.stringify(result.data.user));
-      props.history.push("/");
+      //props.setUser(result.data.user);
+      props.history.push(`/perfil/${result.data.user.id}`);
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
+    <>
     <div className="d-flex vh-75 flex-column align-items-center justify-content-center">
       <div>
         <h2>Acesso Empresa</h2>
@@ -56,6 +58,7 @@ const LoginEmpresa = (props) => {
         <button className="btn btn-primary mt-3">Entrar</button>
       </form>
     </div>
+    </>
   );
 };
 

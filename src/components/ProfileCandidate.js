@@ -28,6 +28,9 @@ const ProfileCandidate = (props) => {
   }, []);
   return (
     <>
+      <div>
+        <h4>Minhas vagas</h4>
+      </div>
       {user && user.nome_e_sobrenome
         ? jobs
           ? jobs.map((job) => (

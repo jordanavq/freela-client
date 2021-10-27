@@ -16,6 +16,7 @@ import ProfileCandidate from "./components/ProfileCandidate";
 import HomeInfo from "./components/HomeInfo";
 import { useState } from "react";
 import JobApplication from "./components/JobApplication";
+import ProfileCompany from "./components/ProfileCompany";
 
 function App() {
   const [user, setUser] = useState();
@@ -42,6 +43,7 @@ function App() {
         <Route exact path="/sair" component={Logout} />
         <Route exact path="/perfil/:candidatoId" component={ProfileCandidate} />
         <Route exact path="/vaga/cadastro" component={JobApplication} />
+        <Route exact path="/perfil/:empresaId" component={ProfileCompany} />
       </div>
       <Footer />
     </div>
