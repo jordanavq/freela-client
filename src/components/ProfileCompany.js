@@ -21,6 +21,17 @@ const ProfileCompany = (props) => {
     }
   };
 
+  const handleDelete = async (idVaga) => {
+    try {
+      await api.delete(`/vaga/deletar/${idVaga}`);
+
+      window.alert("Vaga deletada com sucesso!");
+      getJobs();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     getJobs();
   }, []);
@@ -29,7 +40,10 @@ const ProfileCompany = (props) => {
       {user && user.empresa
         ? jobs
           ? jobs.map((job) => (
-              <div className="d-flex justify-content-center vh-100 flex-column align-items-center" key={job.id}>
+              <div
+                className="d-flex justify-content-center vh-100 flex-column align-items-center"
+                key={job.id}
+              >
                 <div className=" card w-25  m-3">
                   <h3 className="card-header bg-primary text-light">
                     Vaga: {job.funcao}
@@ -45,11 +59,33 @@ const ProfileCompany = (props) => {
                     <h4>Endereço: {job.endereco}</h4>
                     <h4>Cidade: {job.cidade}</h4>
                     <h4>Estado: {job.estado}</h4>
-                    <Link to={`/`} className="btn btn-light text-secondary">
+                    <Link
+                      to={`/perfil/empresa/${job._id}`}
+                      className="btn btn-light text-secondary"
+                    >
                       Ver candidatos
                     </Link>
+                    <Link
+                      to={`/vaga/editar/${job._id}`}
+                      className="btn btn-light text-secondary"
+                    >
+                      Editar uma vaga
+                    </Link>
+                    <button
+                      onClick={() => handleDelete(job._id)}
+                      type="submit"
+                      className="btn btn-light text-secondary"
+                    >
+                      Deletar Vaga
+                    </button>
                   </div>
                 </div>
+                <Link
+                  to={"/vaga/cadastro"}
+                  className="btn btn-light text-secondary"
+                >
+                  Cadastrar nova vaga
+                </Link>
               </div>
             ))
           : null

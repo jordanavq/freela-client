@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
 import { useEffect } from "react";
 
@@ -8,7 +8,6 @@ import api from "../api/api.config";
 const ProfileCandidate = (props) => {
   const { candidatoId } = useParams();
 
-  console.log(candidatoId);
   const [jobs, setjobs] = useState();
 
   const user = JSON.parse(localStorage.getItem("user"));
@@ -16,7 +15,7 @@ const ProfileCandidate = (props) => {
   const getJobs = async () => {
     try {
       const result = await api.get(`/vaga/${candidatoId}`);
-      console.log(result);
+
       setjobs(result.data);
     } catch (error) {
       console.error(error);
@@ -57,6 +56,16 @@ const ProfileCandidate = (props) => {
             ))
           : null
         : null}
+
+      <div className="mt-2">
+        <Link
+          to={`/perfil/editar/${candidatoId}`}
+          className="btn btn-primary mx-2"
+        >
+          Editar Cadastro
+        </Link>
+        <Link className="btn btn-primary mx-2">Deletar Cadastro</Link>
+      </div>
     </>
   );
 };

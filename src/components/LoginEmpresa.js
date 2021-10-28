@@ -21,7 +21,7 @@ const LoginEmpresa = (props) => {
       localStorage.setItem("token", result.data.token);
       localStorage.setItem("user", JSON.stringify(result.data.user));
       //props.setUser(result.data.user);
-      props.history.push(`/perfil/${result.data.user.id}`);
+      props.history.push(`/perfil-empresa/${result.data.user.id}`);
     } catch (error) {
       console.error(error);
     }
@@ -29,35 +29,35 @@ const LoginEmpresa = (props) => {
 
   return (
     <>
-    <div className="d-flex vh-75 flex-column align-items-center justify-content-center">
-      <div>
-        <h2>Acesso Empresa</h2>
+      <div className="d-flex vh-75 flex-column align-items-center justify-content-center">
+        <div>
+          <h2>Acesso Empresa</h2>
+        </div>
+        <form
+          onSubmit={handleSubmit}
+          className="w-100 d-flex flex-column align-items-center"
+        >
+          <label className="m-2">E-mail:</label>
+          <input
+            className="form-control w-25"
+            type="text"
+            name="email"
+            value={formValues.email}
+            onChange={handleChange}
+          />
+
+          <label className="m-2">Senha:</label>
+          <input
+            className="form-control w-25"
+            type="password"
+            name="senha"
+            value={formValues.senha}
+            onChange={handleChange}
+          />
+
+          <button className="btn btn-primary mt-3">Entrar</button>
+        </form>
       </div>
-      <form
-        onSubmit={handleSubmit}
-        className="w-100 d-flex flex-column align-items-center"
-      >
-        <label className="m-2">E-mail:</label>
-        <input
-          className="form-control w-25"
-          type="text"
-          name="email"
-          value={formValues.email}
-          onChange={handleChange}
-        />
-
-        <label className="m-2">Senha:</label>
-        <input
-          className="form-control w-25"
-          type="password"
-          name="senha"
-          value={formValues.senha}
-          onChange={handleChange}
-        />
-
-        <button className="btn btn-primary mt-3">Entrar</button>
-      </form>
-    </div>
     </>
   );
 };

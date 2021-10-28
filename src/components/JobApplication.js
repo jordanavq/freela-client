@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
+import { useEffect } from "react";
 import api from "../api/api.config";
 
 const INITIAL_FORM = {
@@ -14,7 +16,25 @@ const INITIAL_FORM = {
 };
 
 const JobApplication = (props) => {
+  const user = JSON.parse(localStorage.getItem("user"));
   const [formValues, setFormValues] = useState({ ...INITIAL_FORM });
+  const { vagaId } = useParams();
+  const history = useHistory();
+
+  const getJob = async () => {
+    try {
+      const result = await api.get(`/vagas/${vagaId}`);
+      setFormValues(result.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    if (vagaId) {
+      getJob();
+    }
+  }, []);
 
   const handleChange = ({ target: { name, value, checked, type } }) => {
     setFormValues({
@@ -27,9 +47,13 @@ const JobApplication = (props) => {
     e.preventDefault();
 
     try {
-      await api.post("/vaga/cadastro", formValues);
+      if (vagaId) {
+        await api.put(`/vaga/editar/${vagaId}`, formValues);
+      } else {
+        await api.post("/vaga/cadastro", formValues);
+      }
       window.alert("Vaga cadastrada com sucesso!");
-      props.history.push("/");
+      props.history.push(`/perfil-empresa/${user.id}`);
     } catch (error) {
       console.error(error.response);
     }
