@@ -28,7 +28,7 @@ const ProfileCandidate = (props) => {
   return (
     <>
       <div>
-        <h4>Minhas vagas</h4>
+        <h2 class="text-dark border border-2 rounded border-dark bg-light p-2 pt-3 m-3">Minhas vagas</h2>
       </div>
       {user && user.nome_e_sobrenome
         ? jobs
