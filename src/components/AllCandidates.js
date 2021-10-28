@@ -23,17 +23,16 @@ const AllCandidates = () => {
   }, []);
 
   useEffect(() => {
-    const filtered = jobs.filter(
-      (job) => job.funcao.toLowerCase().includes(search.toLowerCase())
-      // job.cidade.toLowerCase().includes(search.toLowerCase())
+    const filtered = jobs.filter((job) =>
+      job.funcao.toLowerCase().includes(search.toLowerCase())
     );
     setFilteredList(filtered);
   }, [search]);
 
   return (
     <div>
-      <h1 className=" p-2 text-dark">CANDIDATOS</h1>
-      <div className=" d-flex justify-content-center m-5 mt-5">
+      <h1 className="text-dark p-2 pt-3 m-3 text-uppercase">CANDIDATOS</h1>
+      <div className=" d-flex justify-content-center m-3 mt-3">
         <input
           className="form-control me-5 w-50"
           onChange={(e) => setSearch(e.target.value)}
@@ -55,7 +54,7 @@ const AllCandidates = () => {
               {user && user.empresa ? (
                 <Link
                   to={`/candidatos/${item._id}`}
-                  className="btn btn-light text-secondary"
+                  className="btn btn-light text-secondary m-2 p-1 pt-2 border border-2 border-secondary bg-light"
                 >
                   Mais Informações
                 </Link>

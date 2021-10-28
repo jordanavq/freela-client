@@ -40,11 +40,11 @@ const Job = (props) => {
   return (
     <>
       {job && job.empresaId && (
-        <div className="d-flex justify-content-center vh-100 flex-column align-items-center ">
+        <div className="d-flex justify-content-center vh-75 flex-column align-items-center">
           <div className=" card w-25  m-3">
             {/* <div className="d-flex vh-100 flex-column align-items-center justify-content-center text-secondary "> */}
-            <h3 className="card-header bg-primary text-light">
-              Vaga: {job.funcao}
+            <h3 className="card-header bg-primary text-light p-2 m-2 pt-3 rounded text-uppercase">
+            {job.funcao}
             </h3>
             <div className="card-body d-flex flex-column justify-content-between text-secondary">
               <h4>Empresa: {job.empresaId.empresa}</h4>
@@ -63,7 +63,7 @@ const Job = (props) => {
                     disabled
                     onClick={handleSubmit}
                     type="submit"
-                    className="btn btn-light text-secondary"
+                    className="btn btn-light text-secondary m-2 p-1 pt-2 border border-2 border-secondary bg-light"
                   >
                     Candidatura enviada!
                   </button>
@@ -71,7 +71,7 @@ const Job = (props) => {
                   <button
                     onClick={handleSubmit}
                     type="submit"
-                    className="btn btn-light text-secondary"
+                    className="btn btn-light text-secondary m-2 p-1 pt-2 border border-2 border-secondary bg-light"
                   >
                     Candidatar-se
                   </button>

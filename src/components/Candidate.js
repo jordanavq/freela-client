@@ -24,7 +24,7 @@ const Candidate = () => {
     <>
       {candidate && (
         <div className="d-flex justify-content-center vh-75 flex-column align-items-center ">
-          <div className=" card w-25  m-3">
+          <div className="card w-25  m-3">
             <h3 className="card-header bg-primary text-light p-2 m-2 pt-3 rounded text-uppercase">
               {candidate.funcao}
             </h3>

@@ -28,10 +28,11 @@ const LoginCandidato = (props) => {
   };
 
   return (
-    <div className="d-flex vh-75 flex-column align-items-center justify-content-center">
-      <div>
+    <div >
+      <div className="text-dark border border-2 rounded border-dark bg-light p-2 pt-3 m-3 text-uppercase">
         <h2>Acesso Candidato</h2>
       </div>
+      <div className="d-flex vh-75 flex-column align-items-center justify-content-center">
       <form
         onSubmit={handleSubmit}
         className="w-100 d-flex flex-column align-items-center"
@@ -54,8 +55,9 @@ const LoginCandidato = (props) => {
           onChange={handleChange}
         />
 
-        <button className="btn btn-primary mt-3">Entrar</button>
+        <button className="btn btn-primary mt-3 text-uppercase">Entrar</button>
       </form>
+      </div>
     </div>
   );
 };
