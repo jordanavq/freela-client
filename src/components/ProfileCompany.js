@@ -37,11 +37,12 @@ const ProfileCompany = (props) => {
   }, []);
   return (
     <>
+      <h2>VAGAS CADASTRADAS</h2>
       {user && user.empresa
         ? jobs
           ? jobs.map((job) => (
               <div
-                className="d-flex justify-content-center vh-100 flex-column align-items-center"
+                className="d-flex justify-content-center  align-items-center"
                 key={job.id}
               >
                 <div className=" card w-25  m-3">
@@ -61,35 +62,33 @@ const ProfileCompany = (props) => {
                     <h4>Estado: {job.estado}</h4>
                     <Link
                       to={`/perfil/empresa/${job._id}`}
-                      className="btn btn-light text-secondary"
+                      className="btn btn-light text-secondary m-1"
                     >
                       Ver candidatos
                     </Link>
                     <Link
                       to={`/vaga/editar/${job._id}`}
-                      className="btn btn-light text-secondary"
+                      className="btn btn-light text-secondary m-1"
                     >
                       Editar uma vaga
                     </Link>
                     <button
                       onClick={() => handleDelete(job._id)}
                       type="submit"
-                      className="btn btn-light text-secondary"
+                      className="btn btn-light text-secondary m-1"
                     >
                       Deletar Vaga
                     </button>
                   </div>
                 </div>
-                <Link
-                  to={"/vaga/cadastro"}
-                  className="btn btn-light text-secondary"
-                >
-                  Cadastrar nova vaga
-                </Link>
               </div>
             ))
           : null
         : null}
+
+      <Link to={"/vaga/cadastro"} className="btn btn-dark w-25 text-light">
+        Cadastrar nova vaga
+      </Link>
     </>
   );
 };

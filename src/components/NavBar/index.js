@@ -112,7 +112,19 @@ const NavBar = (props) => {
                       to={`/perfil/${user2.id}`}
                       style={{ textDecoration: "none" }}
                     >
-                      <p className="dropdown-item fw-bold">Meu perfil</p>
+                      <p className="dropdown-item fw-bold">MEU PERFIL</p>
+                    </Link>
+                  ) : null}
+                </li>
+
+                <li>
+                  {user2 && user2.empresa ? (
+                    <Link
+                      exact
+                      to={`/perfil-empresa/${user2.id}`}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <p className="dropdown-item fw-bold">MEU PERFIL</p>
                     </Link>
                   ) : null}
                 </li>
