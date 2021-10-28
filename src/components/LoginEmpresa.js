@@ -21,7 +21,8 @@ const LoginEmpresa = (props) => {
       localStorage.setItem("token", result.data.token);
       localStorage.setItem("user", JSON.stringify(result.data.user));
       //props.setUser(result.data.user);
-      props.history.push(`/perfil-empresa/${result.data.user.id}`);
+      window.location = `/perfil-empresa/${result.data.user.id}`;
+      // props.history.push(`/perfil-empresa/${result.data.user.id}`);
     } catch (error) {
       console.error(error);
     }
