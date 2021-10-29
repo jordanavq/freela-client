@@ -5,8 +5,9 @@ import "../NavBar/index.css";
 
 const NavBar = (props) => {
   const user = localStorage.getItem("token");
-  const user2 = props.user;
-  console.log(user2);
+  const user2 = JSON.parse(localStorage.getItem("user"));
+  //const user2 = props.user;
+  //console.log(user2);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
@@ -107,7 +108,7 @@ const NavBar = (props) => {
                 </li>
 
                 <li>
-                  {user2 ? (
+                  {user2 && user2.nome_e_sobrenome ? (
                     <Link
                       exact
                       to={`/perfil/${user2.id}`}
