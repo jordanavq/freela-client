@@ -40,10 +40,13 @@ const SignupCandidato = () => {
     }
   };
   return (
-    <div className="d-flex vh-75 flex-column align-items-center justify-content-center">
-      <div>
-        <h2>Cadastro Candidato</h2>
+    <div >
+      <div className="text-dark border border-2 rounded border-dark bg-light p-2 pt-3 m-3 text-uppercase">
+        <h2 >
+          Cadastro Candidato
+        </h2>
       </div>
+      <div className="d-flex vh-75 flex-column align-items-center justify-content-center">
       <form
         onSubmit={handleSubmit}
         className="w-100 d-flex flex-column align-items-center"
@@ -152,8 +155,9 @@ const SignupCandidato = () => {
           onChange={handleChange}
         />
 
-        <button className="btn btn-primary mt-3">Cadastrar</button>
+        <button className="btn btn-primary mt-3 text-uppercase">Cadastrar</button>
       </form>
+    </div>
     </div>
   );
 };

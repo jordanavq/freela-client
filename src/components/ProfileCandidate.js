@@ -41,14 +41,16 @@ const ProfileCandidate = (props) => {
   return (
     <>
       <div>
-        <h4>Minhas vagas</h4>
+        <h2 className="text-dark border border-2 rounded border-dark bg-light p-2 pt-3 m-3 text-uppercase">
+          Minhas vagas
+        </h2>
       </div>
       {user && user.nome_e_sobrenome
         ? jobs
           ? jobs.map((job) => (
-              <div className="d-flex justify-content-center vh-100 flex-column align-items-center ">
+              <div className="d-flex justify-content-center vh-75 flex-column align-items-center ">
                 <div className=" card w-25  m-3">
-                  <h3 className="card-header bg-primary text-light">
+                  <h3 className="card-header bg-primary text-light p-2 m-2 pt-3 rounded text-uppercase">
                     Vaga: {job.funcao}
                   </h3>
                   <div className="card-body d-flex flex-column justify-content-between text-secondary">
@@ -73,10 +75,11 @@ const ProfileCandidate = (props) => {
       <div className="mt-2">
         <Link
           to={`/perfil/editar/${candidatoId}`}
-          className="btn btn-primary mx-2"
+          className="btn btn-dark w-25 p-2 m-1 text-light text-uppercase btn-lg"
         >
           Editar Cadastro
         </Link>
+
         <button
           onClick={() => handleDelete(candidatoId)}
           type="submit"
@@ -84,6 +87,9 @@ const ProfileCandidate = (props) => {
         >
           Deletar Perfil Candidato
         </button>
+
+        
+
       </div>
     </>
   );

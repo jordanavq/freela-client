@@ -37,56 +37,59 @@ const ProfileCompany = (props) => {
   }, []);
   return (
     <>
-      <h2>VAGAS CADASTRADAS</h2>
+      <div>
+        <h2 class="text-dark border border-2 rounded border-dark bg-light p-2 pt-3 m-3">
+          VAGAS CADASTRADAS
+        </h2>
+      </div>
       {user && user.empresa
         ? jobs
           ? jobs.map((job) => (
               <div
-                className="d-flex justify-content-center  align-items-center"
+                className="d-flex card w-25  m-3"
+                style={{ width: "100rem" }}
                 key={job.id}
               >
-                <div className=" card w-25  m-3">
-                  <h3 className="card-header bg-primary text-light">
-                    Vaga: {job.funcao}
-                  </h3>
-                  <div className="card-body d-flex flex-column justify-content-between text-secondary">
-                    <h4>Data: {job.data}</h4>
-                    <h4>Horário: {job.horario}</h4>
-                    <h4>Diária: {job.diaria}</h4>
-                    <h4>Traje: {job.traje}</h4>
-                    <h4>
-                      Fornece Refeição: {job.fornece_refeicao ? "Sim" : "Não"}
-                    </h4>
-                    <h4>Endereço: {job.endereco}</h4>
-                    <h4>Cidade: {job.cidade}</h4>
-                    <h4>Estado: {job.estado}</h4>
-                    <Link
-                      to={`/perfil/empresa/${job._id}`}
-                      className="btn btn-light text-secondary m-1"
-                    >
-                      Ver candidatos
-                    </Link>
-                    <Link
-                      to={`/vaga/editar/${job._id}`}
-                      className="btn btn-light text-secondary m-1"
-                    >
-                      Editar uma vaga
-                    </Link>
-                    <button
-                      onClick={() => handleDelete(job._id)}
-                      type="submit"
-                      className="btn btn-light text-secondary m-1"
-                    >
-                      Deletar Vaga
-                    </button>
-                  </div>
+                <h3 className="card-header bg-primary text-light p-2 m-2 pt-3 rounded text-uppercase">
+                  {job.funcao}
+                </h3>
+                <div className="card-body d-flex flex-column justify-content-between text-secondary">
+                  <h4>Data: {job.data}</h4>
+                  <h4>Horário: {job.horario}</h4>
+                  <h4>Diária: {job.diaria}</h4>
+                  <h4>Traje: {job.traje}</h4>
+                  <h4>
+                    Fornece Refeição: {job.fornece_refeicao ? "Sim" : "Não"}
+                  </h4>
+                  <h4>Endereço: {job.endereco}</h4>
+                  <h4>Cidade: {job.cidade}</h4>
+                  <h4>Estado: {job.estado}</h4>
+                  <Link
+                    to={`/perfil/empresa/${job._id}`}
+                    className="btn btn-light text-secondary m-2 p-1 pt-2 border border-2 border-secondary bg-light "
+                  >
+                    Ver candidatos
+                  </Link>
+                  <Link
+                    to={`/vaga/editar/${job._id}`}
+                    className="btn btn-light text-secondary m-2 p-1 pt-2 border border-2 border-secondary bg-light"
+                  >
+                    Editar Vaga
+                  </Link>
+                  <button
+                    onClick={() => handleDelete(job._id)}
+                    type="submit"
+                    className="btn btn-light text-secondary m-2 p-1 pt-2 border border-2 border-secondary bg-light"
+                  >
+                    Deletar Vaga
+                  </button>
                 </div>
               </div>
             ))
           : null
         : null}
 
-      <Link to={"/vaga/cadastro"} className="btn btn-dark w-25 text-light">
+      <Link to={"/vaga/cadastro"} className="btn btn-dark w-25 p-2 m-1 text-light text-uppercase btn-lg">
         Cadastrar nova vaga
       </Link>
     </>

@@ -27,19 +27,21 @@ const JobInscriptions = (props) => {
   return (
     <>
       <div>
-        <h4>Candidatos Inscritos</h4>
+        <h3 class="text-dark border border-2 rounded border-dark bg-light p-2 pt-3 m-3 text-uppercase">
+          Candidatos Inscritos
+        </h3>
       </div>
       {user && user.empresa
         ? vaga.candidatosId
           ? vaga.candidatosId.map((candidate) => (
               <div
-                className="d-flex justify-content-center vh-100 flex-column align-items-center "
+                className=""
                 key={candidate.id}
               >
                 <div className=" card w-25  m-3">
-                  <h3 className="card-header bg-primary text-light">
+                  <h4 className="card-header bg-primary text-light p-2 m-2 pt-3 rounded text-uppercase">
                     Vaga: {vaga.funcao}
-                  </h3>
+                  </h4>
                   <div className="card-body d-flex flex-column justify-content-between text-secondary">
                     <h4>Nome: {candidate.nome_e_sobrenome}</h4>
                     <h4>Profissão: {candidate.funcao}</h4>
