@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
 import { useEffect } from "react";
 
@@ -10,6 +10,8 @@ const ProfileCandidate = (props) => {
 
   const [jobs, setjobs] = useState();
 
+  const history = useHistory();
+
   const user = JSON.parse(localStorage.getItem("user"));
 
   const getJobs = async () => {
@@ -17,6 +19,17 @@ const ProfileCandidate = (props) => {
       const result = await api.get(`/vaga/${candidatoId}`);
 
       setjobs(result.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await api.delete(`/candidato/deletar/${id}`);
+
+      window.alert("Cadastro deletado. Até breve!");
+      history.push("/");
     } catch (error) {
       console.error(error);
     }
@@ -67,9 +80,17 @@ const ProfileCandidate = (props) => {
         >
           Editar Cadastro
         </Link>
-        <Link className="btn btn-dark w-25 p-2 m-1 text-light text-uppercase btn-lg">
-          Deletar Cadastro
-        </Link>
+
+        <button
+          onClick={() => handleDelete(candidatoId)}
+          type="submit"
+          className="btn btn-light text-secondary m-1"
+        >
+          Deletar Perfil Candidato
+        </button>
+
+        
+
       </div>
     </>
   );
