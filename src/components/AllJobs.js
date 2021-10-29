@@ -7,6 +7,8 @@ const AllJobs = () => {
   const [search, setSearch] = useState("");
   const [filteredList, setFilteredList] = useState([]);
 
+  const user = JSON.parse(localStorage.getItem("user"));
+
   const getAllJobs = async () => {
     try {
       const result = await api.get("/vagas");
@@ -50,12 +52,20 @@ const AllJobs = () => {
               <h5>Data: {item.data}</h5>
               <h5>Cidade: {item.cidade}</h5>
               <h5>Estado: {item.estado}</h5>
-              <Link
+              {user && user.nome_e_sobrenome ? (
+                <Link
+                  to={`/vagas/${item._id}`}
+                  className="btn btn-light text-secondary m-2 p-1 pt-2 border border-2 border-secondary bg-light"
+                >
+                  Mais Informações
+                </Link>
+              ) : null}
+              {/* <Link
                 to={`/vagas/${item._id}`}
                 className="btn btn-light text-secondary m-2 p-1 pt-2 border border-2 border-secondary bg-light"
               >
                 Mais Informações
-              </Link>
+              </Link> */}
             </div>
           </div>
         ))}
