@@ -84,7 +84,7 @@ const ProfileCandidate = (props) => {
         <button
           onClick={() => handleDelete(candidatoId)}
           type="submit"
-          className="btn btn-light text-secondary m-1"
+          className="btn btn-dark w-25 p-2 m-1 text-light text-uppercase btn-lg"
         >
           Deletar Perfil Candidato
         </button>
