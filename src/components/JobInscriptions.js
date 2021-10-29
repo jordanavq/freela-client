@@ -31,6 +31,7 @@ const JobInscriptions = (props) => {
           Candidatos Inscritos
         </h3>
       </div>
+      <div className="d-flex p-3">
       {user && user.empresa
         ? vaga.candidatosId
           ? vaga.candidatosId.map((candidate) => (
@@ -38,7 +39,7 @@ const JobInscriptions = (props) => {
                 className=""
                 key={candidate.id}
               >
-                <div className=" card w-25  m-3">
+                <div className=" card w-100 m-3">
                   <h4 className="card-header bg-primary text-light p-2 m-2 pt-3 rounded text-uppercase">
                     Vaga: {vaga.funcao}
                   </h4>
@@ -67,6 +68,7 @@ const JobInscriptions = (props) => {
             ))
           : null
         : null}
+        </div>
     </>
   );
 };

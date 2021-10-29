@@ -32,33 +32,34 @@ const ProfileCandidate = (props) => {
           Minhas vagas
         </h2>
       </div>
-      {user && user.nome_e_sobrenome
-        ? jobs
-          ? jobs.map((job) => (
-              <div className="d-flex justify-content-center vh-75 flex-column align-items-center ">
-                <div className=" card w-25  m-3">
-                  <h3 className="card-header bg-primary text-light p-2 m-2 pt-3 rounded text-uppercase">
-                    Vaga: {job.funcao}
-                  </h3>
-                  <div className="card-body d-flex flex-column justify-content-between text-secondary">
-                    <h4>Empresa: {job.empresaId.empresa}</h4>
-                    <h4>Data: {job.data}</h4>
-                    <h4>Horário: {job.horario}</h4>
-                    <h4>Diária: {job.diaria}</h4>
-                    <h4>Traje: {job.traje}</h4>
-                    <h4>
-                      Fornece Refeição: {job.fornece_refeicao ? "Sim" : "Não"}
-                    </h4>
-                    <h4>Endereço: {job.endereco}</h4>
-                    <h4>Cidade: {job.cidade}</h4>
-                    <h4>Estado: {job.estado}</h4>
+      <div className="d-flex">
+        {user && user.nome_e_sobrenome
+          ? jobs
+            ? jobs.map((job) => (
+                <div className="d-flex justify-content-center vh-75 flex-column align-items-center p-3 ">
+                  <div className=" card w-100 m-3">
+                    <h3 className="card-header bg-primary text-light p-2 m-2 pt-3 rounded text-uppercase">
+                      Vaga: {job.funcao}
+                    </h3>
+                    <div className="card-body d-flex flex-column justify-content-between text-secondary">
+                      <h4>Empresa: {job.empresaId.empresa}</h4>
+                      <h4>Data: {job.data}</h4>
+                      <h4>Horário: {job.horario}</h4>
+                      <h4>Diária: {job.diaria}</h4>
+                      <h4>Traje: {job.traje}</h4>
+                      <h4>
+                        Fornece Refeição: {job.fornece_refeicao ? "Sim" : "Não"}
+                      </h4>
+                      <h4>Endereço: {job.endereco}</h4>
+                      <h4>Cidade: {job.cidade}</h4>
+                      <h4>Estado: {job.estado}</h4>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))
-          : null
-        : null}
-
+              ))
+            : null
+          : null}
+      </div>
       <div className="mt-2">
         <Link
           to={`/perfil/editar/${candidatoId}`}

@@ -42,6 +42,7 @@ const ProfileCompany = (props) => {
           VAGAS CADASTRADAS
         </h2>
       </div>
+      <div className="d-flex">
       {user && user.empresa
         ? jobs
           ? jobs.map((job) => (
@@ -88,7 +89,7 @@ const ProfileCompany = (props) => {
             ))
           : null
         : null}
-
+        </div>
       <Link to={"/vaga/cadastro"} className="btn btn-dark w-25 p-2 m-1 text-light text-uppercase btn-lg">
         Cadastrar nova vaga
       </Link>
