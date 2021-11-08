@@ -3,6 +3,7 @@
 (Project Module 3 Ironhack)
 
  Click [HERE](https://freela-app.herokuapp.com/) to see and enjoy *Freela*
+ Click .[HERE].(https://github.com/jordanavq/freela-server) to see our front-end repository :octocat:
 
 ### Introduction
 
